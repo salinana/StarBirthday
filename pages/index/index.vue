@@ -1,42 +1,144 @@
 <template>
 	<view class="content">
-		<view class="search-bar">
+		<uni-nav-bar class="search-bar" :fixed="true" background-color="#EFEFEF">
 			<image class="logo" src="/static/logo.png"></image>
-			<uni-easyinput class="my-search-input" :styles="searchStyle"  suffixIcon="search" trim="both" v-model="searchValue" placeholder="输入姓名或者生日等" @iconClick="clickSeach"></uni-easyinput>
-		</view>
+			<uni-easyinput class="my-search-input" :styles="searchStyle"  suffixIcon="search" trim="both" v-model="searchValue" placeholder="搜索" @iconClick="clickSeach"></uni-easyinput>
+		</uni-nav-bar>
 		<view class="images-area">
-			<view class="today-birth-people">
+			<view class="common-image-view">
 				<view class="common-content-title">今天生日</view>
 				
-				<uni-row class="first-uni-row">
+				<uni-row class="common-image-uni-row">
 					<uni-col :xs="12" :sm="6" :md="6" :lg="6" :xl="6">
-						<view class="demo-uni-col dark">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+						<view class="demo-uni-col">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix">
+							</image>
 						</view>
 					</uni-col>
-					<uni-col :xs="12" :sm="6" :md="6" :lg="6" :xl="6">
-						<view class="demo-uni-col light">
+					<uni-col :xs="0" :sm="6" :md="6" :lg="6" :xl="6">
+						<view class="demo-uni-col">
 							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
 						</view>
 					</uni-col>
 					<uni-col :xs="0" :sm="6" :md="6" :lg="6" :xl="6">
-						<view class="demo-uni-col dark">
+						<view class="demo-uni-col">
 							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
 						</view>
 					</uni-col>
-					<uni-col :xs="0" :sm="6" :md="6" :lg="6" :xl="6">
-						<view class="demo-uni-col light">
+					<uni-col :xs="12" :sm="6" :md="6" :lg="6" :xl="6">
+						<view class="demo-uni-col">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+						</view>
+					</uni-col>
+				</uni-row>
+				
+				<uni-row class="common-image-uni-row">
+					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
+						<view class="demo-uni-col">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+						</view>
+					</uni-col>
+					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
+						<view class="demo-uni-col">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+						</view>
+					</uni-col>
+					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
+						<view class="demo-uni-col">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+						</view>
+					</uni-col>
+					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
+						<view class="demo-uni-col">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+						</view>
+					</uni-col>
+					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
+						<view class="demo-uni-col">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+						</view>
+					</uni-col>
+					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
+						<view class="demo-uni-col">
 							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
 						</view>
 					</uni-col>
 				</uni-row>
 				
 			</view>
-			<view class="tomorrow-birth-people">
+			<view class="common-image-view">
 				<view class="common-content-title">明天生日</view>
+				
+				<uni-row class="common-image-uni-row">
+					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
+						<view class="demo-uni-col">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+						</view>
+					</uni-col>
+					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
+						<view class="demo-uni-col">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+						</view>
+					</uni-col>
+					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
+						<view class="demo-uni-col">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+						</view>
+					</uni-col>
+					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
+						<view class="demo-uni-col">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+						</view>
+					</uni-col>
+					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
+						<view class="demo-uni-col">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+						</view>
+					</uni-col>
+					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
+						<view class="demo-uni-col">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+						</view>
+					</uni-col>
+				</uni-row>
+				
 			</view>
-			<view class="hot-ranking-people">
+			<view class="common-image-view">
 				<view class="common-content-title">热门排行</view>
+				
+				<uni-row class="common-image-uni-row">
+					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
+						<view class="demo-uni-col">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+						</view>
+					</uni-col>
+					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
+						<view class="demo-uni-col">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+						</view>
+					</uni-col>
+					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
+						<view class="demo-uni-col">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+						</view>
+					</uni-col>
+					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
+						<view class="demo-uni-col">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+						</view>
+					</uni-col>
+					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
+						<view class="demo-uni-col">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+						</view>
+					</uni-col>
+					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
+						<view class="demo-uni-col">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+						</view>
+					</uni-col>
+				</uni-row>
+				
 			</view>
 		</view>
 	</view>
@@ -73,16 +175,17 @@
 		height: 1500rpx;
 	}
 	
-	.search-bar{
+/* 	.search-bar{
 		display: flex;
 		width: 100%;
 		background-color: white;
-	}
+	} */
 
 	.logo {
 		height: 35px;
 		width: 70px;
 		padding:6rpx;
+		background-color: #EFEFEF;
 	}
 	
 	.my-search-input{
@@ -98,15 +201,21 @@
 
 
 	.images-area{
-		background-color: #8f8f94;
+		margin-top: 20rpx;
 		width:80%;
+	}
+	
+	.common-image-view{
+		margin-top: 20rpx;
 	}
 
 	.common-content-title{
+		font-size: x-large;
 		text-align: center;
-		padding: 0 40rpx;
-		border-bottom: 2rpx solid #df1996;
-		margin-bottom: 5rpx;
+		margin-left: 20rpx;
+		margin-right:20rpx;
+		border-bottom: 5rpx solid #8f8f94;
+		margin-bottom: 20rpx;
 	}
 	
 	
@@ -115,7 +224,8 @@
 		height:auto;
 	}
 	
-	.first-uni-row {
+	
+	.common-image-uni-row {
 		margin-bottom: 0px;
 		/* QQ、字节小程序文档写有 :host，但实测不生效 */
 		/* 百度小程序没有 :host，需要设置block */
