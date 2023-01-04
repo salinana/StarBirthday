@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<uni-nav-bar class="search-bar" :fixed="true" background-color="#EFEFEF">
+		<uni-nav-bar class="search-bar" left-icon="home" rightIcon="more" :fixed="true" background-color="#EFEFEF">
 			<image class="logo" src="/static/logo.png"></image>
 			<uni-easyinput class="my-search-input" :styles="searchStyle"  suffixIcon="search" trim="both" v-model="searchValue" placeholder="搜索" @iconClick="clickSeach"></uni-easyinput>
 		</uni-nav-bar>
@@ -11,23 +11,46 @@
 				<uni-row class="common-image-uni-row">
 					<uni-col :xs="12" :sm="6" :md="6" :lg="6" :xl="6">
 						<view class="demo-uni-col">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix">
+							<view class="custom-cover">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
 							</image>
+							<view class="cover-content">
+								<text class="uni-subtitle uni-white">刘德华 60岁</text>
+							</view>
+							</view>
 						</view>
 					</uni-col>
 					<uni-col :xs="0" :sm="6" :md="6" :lg="6" :xl="6">
 						<view class="demo-uni-col">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+							<view class="custom-cover">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+							</image>
+							<view class="cover-content">
+								<text class="uni-subtitle uni-white">刘德华 60岁</text>
+							</view>
+							</view>
 						</view>
 					</uni-col>
 					<uni-col :xs="0" :sm="6" :md="6" :lg="6" :xl="6">
 						<view class="demo-uni-col">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+							<view class="custom-cover">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+							</image>
+							<view class="cover-content">
+								<text class="uni-subtitle uni-white">刘德华 60岁</text>
+							</view>
+							</view>
 						</view>
 					</uni-col>
 					<uni-col :xs="12" :sm="6" :md="6" :lg="6" :xl="6">
 						<view class="demo-uni-col">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+							<view class="custom-cover">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+							</image>
+							<view class="cover-content">
+								<text class="uni-subtitle uni-white">刘德华 60岁</text>
+							</view>
+							</view>
 						</view>
 					</uni-col>
 				</uni-row>
@@ -35,32 +58,68 @@
 				<uni-row class="common-image-uni-row">
 					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+							<view class="custom-cover">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+							</image>
+							<view class="cover-content">
+								<text class="uni-subtitle uni-white">刘德华 60岁</text>
+							</view>
+							</view>
 						</view>
 					</uni-col>
 					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+							<view class="custom-cover">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+							</image>
+							<view class="cover-content">
+								<text class="uni-subtitle uni-white">刘德华 60岁</text>
+							</view>
+							</view>
 						</view>
 					</uni-col>
 					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+							<view class="custom-cover">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+							</image>
+							<view class="cover-content">
+								<text class="uni-subtitle uni-white">刘德华 60岁</text>
+							</view>
+							</view>
 						</view>
 					</uni-col>
 					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+							<view class="custom-cover">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+							</image>
+							<view class="cover-content">
+								<text class="uni-subtitle uni-white">刘德华 60岁</text>
+							</view>
+							</view>
 						</view>
 					</uni-col>
 					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+							<view class="custom-cover">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+							</image>
+							<view class="cover-content">
+								<text class="uni-subtitle uni-white">刘德华 60岁</text>
+							</view>
+							</view>
 						</view>
 					</uni-col>
 					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+							<view class="custom-cover">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+							</image>
+							<view class="cover-content">
+								<text class="uni-subtitle uni-white">刘德华 60岁</text>
+							</view>
+							</view>
 						</view>
 					</uni-col>
 				</uni-row>
@@ -72,32 +131,68 @@
 				<uni-row class="common-image-uni-row">
 					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+							<view class="custom-cover">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+							</image>
+							<view class="cover-content">
+								<text class="uni-subtitle uni-white">刘德华 60岁</text>
+							</view>
+							</view>
 						</view>
 					</uni-col>
 					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+							<view class="custom-cover">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+							</image>
+							<view class="cover-content">
+								<text class="uni-subtitle uni-white">刘德华 60岁</text>
+							</view>
+							</view>
 						</view>
 					</uni-col>
 					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+							<view class="custom-cover">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+							</image>
+							<view class="cover-content">
+								<text class="uni-subtitle uni-white">刘德华 60岁</text>
+							</view>
+							</view>
 						</view>
 					</uni-col>
 					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+							<view class="custom-cover">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+							</image>
+							<view class="cover-content">
+								<text class="uni-subtitle uni-white">刘德华 60岁</text>
+							</view>
+							</view>
 						</view>
 					</uni-col>
 					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+							<view class="custom-cover">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+							</image>
+							<view class="cover-content">
+								<text class="uni-subtitle uni-white">刘德华 60岁</text>
+							</view>
+							</view>
 						</view>
 					</uni-col>
 					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+							<view class="custom-cover">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+							</image>
+							<view class="cover-content">
+								<text class="uni-subtitle uni-white">刘德华 60岁</text>
+							</view>
+							</view>
 						</view>
 					</uni-col>
 				</uni-row>
@@ -109,32 +204,68 @@
 				<uni-row class="common-image-uni-row">
 					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+							<view class="custom-cover">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+							</image>
+							<view class="cover-content">
+								<text class="uni-subtitle uni-white">刘德华 60岁</text>
+							</view>
+							</view>
 						</view>
 					</uni-col>
 					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+							<view class="custom-cover">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+							</image>
+							<view class="cover-content">
+								<text class="uni-subtitle uni-white">刘德华 60岁</text>
+							</view>
+							</view>
 						</view>
 					</uni-col>
 					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+							<view class="custom-cover">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+							</image>
+							<view class="cover-content">
+								<text class="uni-subtitle uni-white">刘德华 60岁</text>
+							</view>
+							</view>
 						</view>
 					</uni-col>
 					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+							<view class="custom-cover">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+							</image>
+							<view class="cover-content">
+								<text class="uni-subtitle uni-white">刘德华 60岁</text>
+							</view>
+							</view>
 						</view>
 					</uni-col>
 					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+							<view class="custom-cover">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+							</image>
+							<view class="cover-content">
+								<text class="uni-subtitle uni-white">刘德华 60岁</text>
+							</view>
+							</view>
 						</view>
 					</uni-col>
 					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
-							<image class="people-image" src="/static//demo.jpeg" mode="widthFix"></image>
+							<view class="custom-cover">
+							<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+							</image>
+							<view class="cover-content">
+								<text class="uni-subtitle uni-white">刘德华 60岁</text>
+							</view>
+							</view>
 						</view>
 					</uni-col>
 				</uni-row>
@@ -161,6 +292,11 @@
 		methods: {
 			clickSeach(){
 				this.title=this.searchValue;
+			},
+			toDetailPage(){
+				uni.navigateTo({
+					url: '/pages/detail/detail?starName=刘德华'
+				})
 			}
 
 		}
@@ -172,7 +308,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		height: 1500rpx;
+		height: 100%;
 	}
 	
 /* 	.search-bar{
@@ -218,6 +354,26 @@
 		margin-bottom: 20rpx;
 	}
 	
+	.custom-cover {
+		flex: 1;
+		flex-direction: row;
+		position: relative;
+	}
+	
+	.cover-content {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 40px;
+		background-color: rgba($color: #000000, $alpha: 0.4);
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		padding-left: 15px;
+		font-size: 14px;
+		color: #fff;
+	}
 	
 	.people-image{
 		width: 100%;
