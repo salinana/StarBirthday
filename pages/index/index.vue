@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<uni-nav-bar class="search-bar" left-icon="home" rightIcon="more" :fixed="true" background-color="#EFEFEF">
+		<uni-nav-bar class="search-bar" @clickLeft="toHomePage" left-icon="home" rightIcon="more" :fixed="true" background-color="#EFEFEF">
 			<image class="logo" src="/static/logo.png"></image>
 			<uni-easyinput class="my-search-input" :styles="searchStyle"  suffixIcon="search" trim="both" v-model="searchValue" placeholder="搜索" @iconClick="clickSeach"></uni-easyinput>
 		</uni-nav-bar>
@@ -296,6 +296,11 @@
 			toDetailPage(){
 				uni.navigateTo({
 					url: '/pages/detail/detail?starName=刘德华'
+				})
+			},
+			toHomePage(){
+				uni.navigateTo({
+					url: '/pages/index/index'
 				})
 			}
 

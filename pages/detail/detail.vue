@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<uni-nav-bar class="search-bar" left-icon="home" rightIcon="more" :fixed="true" background-color="#EFEFEF">
+		<uni-nav-bar class="search-bar" @clickLeft="toHomePage" left-icon="home" rightIcon="more" :fixed="true" background-color="#EFEFEF">
 			<image class="logo" src="/static/logo.png"></image>
 			<uni-easyinput class="my-search-input" :styles="searchStyle"  suffixIcon="search" trim="both" v-model="searchValue" placeholder="搜索" @iconClick="clickSeach"></uni-easyinput>
 		</uni-nav-bar>
@@ -51,35 +51,35 @@
 		
 		<view class="people-ranking-view">
 			<view calss="people-ranking-box">
-				<view class="people-ranking-title">综合排名</view>
+				<view class="people-ranking-title">综合</view>
 				<view class="people-ranking-number">#1234</view>
 			</view>
 			<view calss="people-ranking-box">
-				<view class="people-ranking-title">综合排名</view>
+				<view class="people-ranking-title">女明星</view>
 				<view class="people-ranking-number">#1234</view>
 			</view>
 			<view calss="people-ranking-box">
-				<view class="people-ranking-title">综合排名</view>
+				<view class="people-ranking-title">60岁</view>
 				<view class="people-ranking-number">#1234</view>
 			</view>
 			<view calss="people-ranking-box">
-				<view class="people-ranking-title">综合排名</view>
+				<view class="people-ranking-title">60岁女</view>
 				<view class="people-ranking-number">#1234</view>
 			</view>
 			<view calss="people-ranking-box">
-				<view class="people-ranking-title">综合排名</view>
+				<view class="people-ranking-title">演员</view>
 				<view class="people-ranking-number">#1234</view>
 			</view>
 			<view calss="people-ranking-box">
-				<view class="people-ranking-title">综合排名</view>
+				<view class="people-ranking-title">女演员</view>
 				<view class="people-ranking-number">#1234</view>
 			</view>
 			<view calss="people-ranking-box">
-				<view class="people-ranking-title">综合排名</view>
+				<view class="people-ranking-title">射手座</view>
 				<view class="people-ranking-number">#1234</view>
 			</view>
 			<view calss="people-ranking-box">
-				<view class="people-ranking-title">综合排名</view>
+				<view class="people-ranking-title">女射手座</view>
 				<view class="people-ranking-number">#1234</view>
 			</view>
 		</view>
@@ -103,7 +103,11 @@
 			}
 		},
 		methods: {
-
+			toHomePage(){
+				uni.navigateTo({
+					url: '/pages/index/index'
+				})
+			}
 		},
 		onLoad(e){
 			if(e.starName){
@@ -186,6 +190,8 @@
 		padding: 20rpx;
 		margin-right: 5rpx;
 		margin-top: 5rpx;
+		width:150rpx;
+		height:25rpx;
 	}
 	
 	.people-ranking-number{
@@ -193,6 +199,8 @@
 		padding: 20rpx;
 		margin-right: 5rpx;
 		margin-top: 0rpx;
+		width:150rpx;
+		height:25rpx;
 	}
 	
 	.people-about-view{
