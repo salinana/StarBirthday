@@ -2,7 +2,7 @@
 	<view class="content">
 		<uni-nav-bar class="search-bar" @clickLeft="toHomePage" left-icon="home" rightIcon="more" :fixed="true" background-color="#EFEFEF">
 			<image class="logo" src="/static/logo.png"></image>
-			<uni-easyinput class="my-search-input" :styles="searchStyle"  suffixIcon="search" trim="both" v-model="searchValue" placeholder="搜索" @iconClick="clickSeach"></uni-easyinput>
+			<uni-easyinput class="my-search-input" :styles="searchStyle"  suffixIcon="search" trim="both" v-model="searchValue" placeholder="搜索" @iconClick="clickSearch"></uni-easyinput>
 		</uni-nav-bar>
 		
 		<view class="people-summary-view">
@@ -103,6 +103,16 @@
 			}
 		},
 		methods: {
+			clickSearch(){
+				uni.navigateTo({
+					url: '/pages/search/search'
+				})
+			},
+			toDetailPage(){
+				uni.navigateTo({
+					url: '/pages/detail/detail?starName=刘德华'
+				})
+			},
 			toHomePage(){
 				uni.navigateTo({
 					url: '/pages/index/index'

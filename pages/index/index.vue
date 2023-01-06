@@ -2,7 +2,7 @@
 	<view class="content">
 		<uni-nav-bar class="search-bar" @clickLeft="toHomePage" left-icon="home" rightIcon="more" :fixed="true" background-color="#EFEFEF">
 			<image class="logo" src="/static/logo.png"></image>
-			<uni-easyinput class="my-search-input" :styles="searchStyle"  suffixIcon="search" trim="both" v-model="searchValue" placeholder="搜索" @iconClick="clickSeach"></uni-easyinput>
+			<uni-easyinput class="my-search-input" :styles="searchStyle"  suffixIcon="search" trim="both" v-model="searchValue" placeholder="搜索" @iconClick="clickSearch"></uni-easyinput>
 		</uni-nav-bar>
 		<view class="images-area">
 			<view class="common-image-view">
@@ -279,19 +279,16 @@
 	export default {
 		data() {
 			return {
-				title: '明星生日汇',
-				searchStyle: {
-						borderColor: '#df1996',
-						color:'#df1996'
-				}
 			}
 		},
 		onLoad() {
 
 		},
 		methods: {
-			clickSeach(){
-				this.title=this.searchValue;
+			clickSearch(){
+				uni.navigateTo({
+					url: '/pages/search/search'
+				})
 			},
 			toDetailPage(){
 				uni.navigateTo({
@@ -303,7 +300,6 @@
 					url: '/pages/index/index'
 				})
 			}
-
 		}
 	}
 </script>
