@@ -10,7 +10,79 @@
 		
 		<view class="images-area">
 
-			<uni-badge class="uni-badge-left-margin" :text="1" absolute="leftTop" :offset="[10, 10]" >
+			<uni-badge class="uni-badge-left-margin" :text="1" absolute="leftTop" :offset="[10, 10]" :customStyle="{background: '#DF1996'}">
+				<view class="image-item-box">
+					<view class="custom-cover">
+					<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+					</image>
+					<view class="cover-content">
+						<text class="uni-subtitle uni-white">刘德华 60岁</text>
+					</view>
+					</view>
+				</view>
+			</uni-badge>
+			
+			<uni-badge class="uni-badge-left-margin" :text="1" absolute="leftTop" :offset="[10, 10]" :customStyle="{background: '#DF1996'}">
+				<view class="image-item-box">
+					<view class="custom-cover">
+					<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+					</image>
+					<view class="cover-content">
+						<text class="uni-subtitle uni-white">刘德华 60岁</text>
+					</view>
+					</view>
+				</view>
+			</uni-badge>
+			
+			<uni-badge class="uni-badge-left-margin" :text="1" absolute="leftTop" :offset="[10, 10]" :customStyle="{background: '#DF1996'}">
+				<view class="image-item-box">
+					<view class="custom-cover">
+					<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+					</image>
+					<view class="cover-content">
+						<text class="uni-subtitle uni-white">刘德华 60岁</text>
+					</view>
+					</view>
+				</view>
+			</uni-badge>
+			
+			<uni-badge class="uni-badge-left-margin" :text="1" absolute="leftTop" :offset="[10, 10]" :customStyle="{background: '#DF1996'}">
+				<view class="image-item-box">
+					<view class="custom-cover">
+					<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+					</image>
+					<view class="cover-content">
+						<text class="uni-subtitle uni-white">刘德华 60岁</text>
+					</view>
+					</view>
+				</view>
+			</uni-badge>
+			
+			<uni-badge class="uni-badge-left-margin" :text="1" absolute="leftTop" :offset="[10, 10]" :customStyle="{background: '#DF1996'}">
+				<view class="image-item-box">
+					<view class="custom-cover">
+					<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+					</image>
+					<view class="cover-content">
+						<text class="uni-subtitle uni-white">刘德华 60岁</text>
+					</view>
+					</view>
+				</view>
+			</uni-badge>
+			
+			<uni-badge class="uni-badge-left-margin" :text="1" absolute="leftTop" :offset="[10, 10]" :customStyle="{background: '#DF1996'}">
+				<view class="image-item-box">
+					<view class="custom-cover">
+					<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+					</image>
+					<view class="cover-content">
+						<text class="uni-subtitle uni-white">刘德华 60岁</text>
+					</view>
+					</view>
+				</view>
+			</uni-badge>
+			
+			<uni-badge class="uni-badge-left-margin" :text="1" absolute="leftTop" :offset="[10, 10]" :customStyle="{background: '#DF1996'}">
 				<view class="image-item-box">
 					<view class="custom-cover">
 					<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
