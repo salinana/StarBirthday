@@ -25,7 +25,7 @@
 						</view>
 					</uni-col>
 					<uni-col :xs="0" :sm="6" :md="6" :lg="6" :xl="6">
-						<view class="demo-uni-col">
+						<view v-if="todaylist.length>6" class="demo-uni-col">
 							<view class="custom-cover">
 							<image class="people-image" :src="todaylist[6].imgUrl" mode="widthFix" @click="toDetailPage">
 							</image>
@@ -36,7 +36,7 @@
 						</view>
 					</uni-col>
 					<uni-col :xs="0" :sm="6" :md="6" :lg="6" :xl="6">
-						<view class="demo-uni-col">
+						<view v-if="todaylist.length>7" class="demo-uni-col">
 							<view class="custom-cover">
 							<image class="people-image" :src="todaylist[7].imgUrl" mode="widthFix" @click="toDetailPage">
 							</image>
@@ -167,7 +167,7 @@
 						</view>
 					</uni-col>
 					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
-						<view class="demo-uni-col">
+						<view v-if="tmrlist.length>5" class="demo-uni-col">
 							<view class="custom-cover">
 							<image class="people-image" :src="tmrlist[5].imgUrl" mode="widthFix" @click="toDetailPage">
 							</image>
@@ -178,7 +178,7 @@
 						</view>
 					</uni-col>
 					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
-						<view class="demo-uni-col">
+						<view v-if="tmrlist.length>6" class="demo-uni-col">
 							<view class="custom-cover">
 							<image class="people-image" :src="tmrlist[6].imgUrl" mode="widthFix" @click="toDetailPage">
 							</image>
