@@ -16,7 +16,7 @@
 					<uni-col :xs="12" :sm="6" :md="6" :lg="6" :xl="6">
 						<view class="demo-uni-col">
 							<view class="custom-cover">
-							<image class="people-image" :src="todaylist[0].imgUrl" mode="widthFix" @click="toDetailPage">
+							<image class="people-image" :src="todaylist[0].imgUrl" mode="widthFix" @click="toDetailPage(todaylist[0])">
 							</image>
 							<view class="cover-content">
 								<text class="uni-subtitle uni-white">{{todaylist[0].name}} {{todaylist[0].age}}岁</text>
@@ -27,7 +27,7 @@
 					<uni-col :xs="0" :sm="6" :md="6" :lg="6" :xl="6">
 						<view v-if="todaylist.length>6" class="demo-uni-col">
 							<view class="custom-cover">
-							<image class="people-image" :src="todaylist[6].imgUrl" mode="widthFix" @click="toDetailPage">
+							<image class="people-image" :src="todaylist[6].imgUrl" mode="widthFix" @click="toDetailPage(todaylist[6])">
 							</image>
 							<view class="cover-content">
 								<text class="uni-subtitle uni-white">{{todaylist[6].name}} {{todaylist[6].age}}岁</text>
@@ -38,7 +38,7 @@
 					<uni-col :xs="0" :sm="6" :md="6" :lg="6" :xl="6">
 						<view v-if="todaylist.length>7" class="demo-uni-col">
 							<view class="custom-cover">
-							<image class="people-image" :src="todaylist[7].imgUrl" mode="widthFix" @click="toDetailPage">
+							<image class="people-image" :src="todaylist[7].imgUrl" mode="widthFix" @click="toDetailPage(todaylist[7])">
 							</image>
 							<view class="cover-content">
 								<text class="uni-subtitle uni-white">{{todaylist[7].name}} {{todaylist[7].age}}岁</text>
@@ -49,7 +49,7 @@
 					<uni-col :xs="12" :sm="6" :md="6" :lg="6" :xl="6">
 						<view class="demo-uni-col">
 							<view class="custom-cover">
-							<image class="people-image" :src="todaylist[1].imgUrl" mode="widthFix" @click="toDetailPage">
+							<image class="people-image" :src="todaylist[1].imgUrl" mode="widthFix" @click="toDetailPage(todaylist[1])">
 							</image>
 							<view class="cover-content">
 								<text class="uni-subtitle uni-white">{{todaylist[1].name}} {{todaylist[1].age}}岁</text>
@@ -63,7 +63,7 @@
 					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
 							<view class="custom-cover">
-							<image class="people-image" :src="todaylist[2].imgUrl" mode="widthFix" @click="toDetailPage">
+							<image class="people-image" :src="todaylist[2].imgUrl" mode="widthFix" @click="toDetailPage(todaylist[2])">
 							</image>
 							<view class="cover-content">
 								<text class="uni-subtitle uni-white">{{todaylist[2].name}} {{todaylist[2].age}}岁</text>
@@ -74,7 +74,7 @@
 					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
 							<view class="custom-cover">
-							<image class="people-image" :src="todaylist[3].imgUrl" mode="widthFix" @click="toDetailPage">
+							<image class="people-image" :src="todaylist[3].imgUrl" mode="widthFix" @click="toDetailPage(todaylist[3])">
 							</image>
 							<view class="cover-content">
 								<text class="uni-subtitle uni-white">{{todaylist[3].name}} {{todaylist[3].age}}岁</text>
@@ -85,7 +85,7 @@
 					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
 						<view v-if="todaylist.length>8" class="demo-uni-col">
 							<view class="custom-cover">
-							<image class="people-image" :src="todaylist[8].imgUrl" mode="widthFix" @click="toDetailPage">
+							<image class="people-image" :src="todaylist[8].imgUrl" mode="widthFix" @click="toDetailPage(todaylist[8])">
 							</image>
 							<view class="cover-content">
 								<text class="uni-subtitle uni-white">{{todaylist[8].name}} {{todaylist[8].age}}岁</text>
@@ -96,7 +96,7 @@
 					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
 						<view v-if="todaylist.length>9" class="demo-uni-col">
 							<view class="custom-cover">
-							<image class="people-image" :src="todaylist[9].imgUrl" mode="widthFix" @click="toDetailPage">
+							<image class="people-image" :src="todaylist[9].imgUrl" mode="widthFix" @click="toDetailPage(todaylist[9])">
 							</image>
 							<view class="cover-content">
 								<text class="uni-subtitle uni-white">{{todaylist[9].name}} {{todaylist[9].age}}岁</text>
@@ -107,7 +107,7 @@
 					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
 						<view v-if="todaylist.length>10" class="demo-uni-col">
 							<view class="custom-cover">
-							<image class="people-image" :src="todaylist[10].imgUrl" mode="widthFix" @click="toDetailPage">
+							<image class="people-image" :src="todaylist[10].imgUrl" mode="widthFix" @click="toDetailPage(todaylist[10])">
 							</image>
 							<view class="cover-content">
 								<text class="uni-subtitle uni-white">{{todaylist[10].name}} {{todaylist[10].age}}岁</text>
@@ -118,7 +118,7 @@
 					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
 							<view class="custom-cover">
-							<image class="people-image" :src="todaylist[4].imgUrl" mode="widthFix" @click="toDetailPage">
+							<image class="people-image" :src="todaylist[4].imgUrl" mode="widthFix" @click="toDetailPage(todaylist[4])">
 							</image>
 							<view class="cover-content">
 								<text class="uni-subtitle uni-white">{{todaylist[4].name}} {{todaylist[4].age}}岁</text>
@@ -136,7 +136,7 @@
 					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
 							<view class="custom-cover">
-							<image class="people-image" :src="tmrlist[0].imgUrl" mode="widthFix" @click="toDetailPage">
+							<image class="people-image" :src="tmrlist[0].imgUrl" mode="widthFix" @click="toDetailPage(tmrlist[0])">
 							</image>
 							<view class="cover-content">
 								<text class="uni-subtitle uni-white">{{tmrlist[0].name}} {{tmrlist[0].age}}岁</text>
@@ -147,7 +147,7 @@
 					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
 							<view class="custom-cover">
-							<image class="people-image" :src="tmrlist[1].imgUrl" mode="widthFix" @click="toDetailPage">
+							<image class="people-image" :src="tmrlist[1].imgUrl" mode="widthFix" @click="toDetailPage(tmrlist[1])">
 							</image>
 							<view class="cover-content">
 								<text class="uni-subtitle uni-white">{{tmrlist[1].name}} {{tmrlist[1].age}}岁</text>
@@ -158,7 +158,7 @@
 					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
 							<view class="custom-cover">
-							<image class="people-image" :src="tmrlist[4].imgUrl" mode="widthFix" @click="toDetailPage">
+							<image class="people-image" :src="tmrlist[4].imgUrl" mode="widthFix" @click="toDetailPage(tmrlist[4])">
 							</image>
 							<view class="cover-content">
 								<text class="uni-subtitle uni-white">{{tmrlist[4].name}} {{tmrlist[4].age}}岁</text>
@@ -169,7 +169,7 @@
 					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
 						<view v-if="tmrlist.length>5" class="demo-uni-col">
 							<view class="custom-cover">
-							<image class="people-image" :src="tmrlist[5].imgUrl" mode="widthFix" @click="toDetailPage">
+							<image class="people-image" :src="tmrlist[5].imgUrl" mode="widthFix" @click="toDetailPage(tmrlist[5])">
 							</image>
 							<view class="cover-content">
 								<text class="uni-subtitle uni-white">{{tmrlist[5].name}} {{tmrlist[5].age}}岁</text>
@@ -180,7 +180,7 @@
 					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
 						<view v-if="tmrlist.length>6" class="demo-uni-col">
 							<view class="custom-cover">
-							<image class="people-image" :src="tmrlist[6].imgUrl" mode="widthFix" @click="toDetailPage">
+							<image class="people-image" :src="tmrlist[6].imgUrl" mode="widthFix" @click="toDetailPage(tmrlist[6])">
 							</image>
 							<view class="cover-content">
 								<text class="uni-subtitle uni-white">{{tmrlist[6].name}} {{tmrlist[6].age}}岁</text>
@@ -191,7 +191,7 @@
 					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
 							<view class="custom-cover">
-							<image class="people-image" :src="tmrlist[2].imgUrl" mode="widthFix" @click="toDetailPage">
+							<image class="people-image" :src="tmrlist[2].imgUrl" mode="widthFix" @click="toDetailPage(tmrlist[2])">
 							</image>
 							<view class="cover-content">
 								<text class="uni-subtitle uni-white">{{tmrlist[2].name}} {{tmrlist[2].age}}岁</text>
@@ -209,7 +209,7 @@
 					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
 							<view class="custom-cover">
-							<image class="people-image" :src="starlist[0].imgUrl" mode="widthFix" @click="toDetailPage">
+							<image class="people-image" :src="starlist[0].imgUrl" mode="widthFix" @click="toDetailPage(starlist[0])">
 							</image>
 							<view class="cover-content">
 								<text class="uni-subtitle uni-white">{{starlist[0].name}} {{starlist[0].age}}岁</text>
@@ -220,7 +220,7 @@
 					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
 							<view class="custom-cover">
-							<image class="people-image" :src="starlist[1].imgUrl" mode="widthFix" @click="toDetailPage">
+							<image class="people-image" :src="starlist[1].imgUrl" mode="widthFix" @click="toDetailPage(starlist[1])">
 							</image>
 							<view class="cover-content">
 								<text class="uni-subtitle uni-white">{{starlist[1].name}} {{starlist[1].age}}岁</text>
@@ -231,7 +231,7 @@
 					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
 							<view class="custom-cover">
-							<image class="people-image" :src="starlist[4].imgUrl" mode="widthFix" @click="toDetailPage">
+							<image class="people-image" :src="starlist[4].imgUrl" mode="widthFix" @click="toDetailPage(starlist[4])">
 							</image>
 							<view class="cover-content">
 								<text class="uni-subtitle uni-white">{{starlist[4].name}} {{starlist[4].age}}岁</text>
@@ -242,7 +242,7 @@
 					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
 							<view class="custom-cover">
-							<image class="people-image" :src="starlist[5].imgUrl" mode="widthFix" @click="toDetailPage">
+							<image class="people-image" :src="starlist[5].imgUrl" mode="widthFix" @click="toDetailPage(starlist[5])">
 							</image>
 							<view class="cover-content">
 								<text class="uni-subtitle uni-white">{{starlist[5].name}} {{starlist[5].age}}岁</text>
@@ -253,7 +253,7 @@
 					<uni-col :xs="0" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
 							<view class="custom-cover">
-							<image class="people-image" :src="starlist[6].imgUrl" mode="widthFix" @click="toDetailPage">
+							<image class="people-image" :src="starlist[6].imgUrl" mode="widthFix" @click="toDetailPage(starlist[6])">
 							</image>
 							<view class="cover-content">
 								<text class="uni-subtitle uni-white">{{starlist[6].name}} {{starlist[6].age}}岁</text>
@@ -264,7 +264,7 @@
 					<uni-col :xs="8" :sm="4" :md="4" :lg="4" :xl="4">
 						<view class="demo-uni-col">
 							<view class="custom-cover">
-							<image class="people-image" :src="starlist[2].imgUrl" mode="widthFix" @click="toDetailPage">
+							<image class="people-image" :src="starlist[2].imgUrl" mode="widthFix" @click="toDetailPage(starlist[2])">
 							</image>
 							<view class="cover-content">
 								<text class="uni-subtitle uni-white">{{starlist[2].name}} {{starlist[2].age}}岁</text>
@@ -304,7 +304,11 @@
 
 			for (let i = 0; i < database.length; i++) {
 				var temp=database[i].split("|");
-				this.starlist[i]={ranking:i,age:year-temp[4],index:temp[0],visit:temp[1],name:temp[2],sex:temp[3],year:temp[4],month:temp[5],day:temp[6],job:temp[7],country:temp[8],province:temp[9],city:temp[10],imgUrl:temp[11]}	
+				var tempAge="*";
+				if(temp[4]&&temp[4]!==""){
+					tempAge=year-temp[4];
+				}
+				this.starlist[i]={ranking:i,age:tempAge,index:temp[0],visit:temp[1],name:temp[2],sex:temp[3],year:temp[4],month:temp[5],day:temp[6],job:temp[7],country:temp[8],province:temp[9],city:temp[10],imgUrl:temp[11]}	
 				if(this.starlist[i].month==today_month&&this.starlist[i].day==today_day){
 					this.todaylist.push(this.starlist[i]);
 				}
@@ -327,9 +331,10 @@
 					url: '/pages/search/search'
 				})
 			},
-			toDetailPage(){
+			toDetailPage:function(e){
+				console.log(e.ranking)
 				uni.navigateTo({
-					url: '/pages/detail/detail?starName=刘德华'
+					url: '/pages/detail/detail?ranking='+e.ranking
 				})
 			},
 			toHomePage(){

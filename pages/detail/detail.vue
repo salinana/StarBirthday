@@ -7,44 +7,44 @@
 		
 		<view class="people-summary-view">
 			<view class="people-image-view">
-				<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+				<image class="people-image" :src="this.star.imgUrl" mode="widthFix">
 				</image>
 			</view>
 		
 			<view class="people-name-view">
-				<view><text>刘德华</text></view>
+				<view><text>{{this.star.name}}</text></view>
 				<button type="warn">点赞</button>
 			</view>
 			
 			<view class="people-features-view">
 				<view class="people-feature-item">
 					<uni-icons type="medal" size="30"></uni-icons>
-					<text>第1234名</text>
+					<text>第{{this.star.ranking}}名</text>
 				</view>
 				
 				<view class="people-feature-item">
 					<uni-icons type="calendar" size="30"></uni-icons>
-					<text>1989年10月1日</text>
+					<text>{{this.star.year}}年{{this.star.month}}月{{this.star.day}}日</text>
 				</view>
 				<view class="people-feature-item">
 					<uni-icons type="location" size="30"></uni-icons>
-					<text>中国 香港</text>
+					<text>{{this.star.country}} {{this.star.province}}{{this.star.city}}</text>
 				</view>
 				<view class="people-feature-item">
 					<uni-icons type="notification" size="30"></uni-icons>
-					<text>60岁</text>
+					<text>{{this.star.age}}岁</text>
 				</view>
 				<view class="people-feature-item">
 					<uni-icons type="star" size="30"></uni-icons>
-					<text>金牛座</text>
+					<text>{{this.star.starsign}}</text>
 				</view>
 				<view class="people-feature-item">
 					<uni-icons type="staff" size="30"></uni-icons>
-					<text>男</text>
+					<text>{{this.star.sex}}</text>
 				</view>
 				<view class="people-feature-item">
 					<uni-icons type="shop" size="30"></uni-icons>
-					<text>演员</text>
+					<text>{{this.star.job}}</text>
 				</view>
 			</view>
 		</view>
@@ -52,54 +52,59 @@
 		<view class="people-ranking-view">
 			<view calss="people-ranking-box">
 				<view class="people-ranking-title">综合</view>
-				<view class="people-ranking-number">#1234</view>
+				<view class="people-ranking-number">#{{this.star.ranking}}</view>
 			</view>
 			<view calss="people-ranking-box">
-				<view class="people-ranking-title">女明星</view>
-				<view class="people-ranking-number">#1234</view>
+				<view class="people-ranking-title">{{this.star.sex}}明星</view>
+				<view class="people-ranking-number">#{{this.sexRanking}}</view>
 			</view>
 			<view calss="people-ranking-box">
-				<view class="people-ranking-title">60岁</view>
-				<view class="people-ranking-number">#1234</view>
+				<view class="people-ranking-title">{{this.star.age}}岁</view>
+				<view class="people-ranking-number">#{{this.ageRanking}}</view>
 			</view>
 			<view calss="people-ranking-box">
-				<view class="people-ranking-title">60岁女</view>
-				<view class="people-ranking-number">#1234</view>
+				<view class="people-ranking-title">{{this.star.age}}岁{{this.star.sex}}</view>
+				<view class="people-ranking-number">#{{this.sexageRanking}}</view>
 			</view>
 			<view calss="people-ranking-box">
-				<view class="people-ranking-title">演员</view>
-				<view class="people-ranking-number">#1234</view>
+				<view class="people-ranking-title">{{this.star.job}}</view>
+				<view class="people-ranking-number">#{{this.jobRanking}}</view>
 			</view>
 			<view calss="people-ranking-box">
-				<view class="people-ranking-title">女演员</view>
-				<view class="people-ranking-number">#1234</view>
+				<view class="people-ranking-title">{{this.star.sex}}{{this.star.job}}</view>
+				<view class="people-ranking-number">#{{this.sexjobRanking}}</view>
 			</view>
 			<view calss="people-ranking-box">
-				<view class="people-ranking-title">射手座</view>
-				<view class="people-ranking-number">#1234</view>
+				<view class="people-ranking-title">{{this.star.starsign}}</view>
+				<view class="people-ranking-number">#{{this.starsignRanking}}</view>
 			</view>
 			<view calss="people-ranking-box">
-				<view class="people-ranking-title">女射手座</view>
-				<view class="people-ranking-number">#1234</view>
+				<view class="people-ranking-title">{{this.star.sex}}{{this.star.starsign}}</view>
+				<view class="people-ranking-number">#{{this.sexstarsignRanking}}</view>
 			</view>
 		</view>
 		
 		<view class="people-about-view">
-			<text>
-				刘德华（Andy Lau），1961年9月27日出生于中国香港，籍贯广东江门 [325]  ，中国香港影视男演员、歌手、制片人、作词人。
-				1981年出演电影处女作《彩云曲》。1983年主演的武侠剧《神雕侠侣》在香港取得62点的收视纪录 [1]  。1985年发行首张个人专辑《只知道此刻爱你》 [8]  。1990年凭借专辑《可不可以》在歌坛获得关注。1991年创办天幕电影公司 [2]  。1994年获得十大劲歌金曲最受欢迎男歌星奖；同年担任剧情片《天与地》的制片人。1995年在央视春晚上演唱其代表作《忘情水》 [9]  。2000年凭借警匪片《暗战》获得金像奖最佳男主角奖 [3]  ；同年被《吉尼斯世界纪录大全》评为获奖最多的香港男歌手 [10]  。
-				2004年凭借剧情片《大块头有大智慧》获得金像奖最佳男主角奖 [262]  ；同年凭借警匪片《无间道3：终极无间》获得金马奖最佳男主角奖 [4]  ；同年第六次获得十大劲歌金曲最受欢迎男歌星奖。2005年获得香港UA院线颁发的全港最高累积票房香港男演员奖 [5]  。2006年获得釜山国际电影节亚洲最有贡献电影人奖 [6]  。2012年凭借剧情片《桃姐》获得金马奖、金像奖最佳男主角奖；同年担任第49届台湾电影金马奖评审团主席 [7]  。2015年第5次登上央视春晚并演唱歌曲《回家的路》。2020年发行个人首张数字专辑《演·唱》 [252]  。
-				演艺事业外，刘德华关心公益慈善。1994年创立刘德华慈善基金会。2000年被评为世界十大杰出青年。2005年发起亚洲新星导计划 [11]  。2008年被委任为香港非官守太平绅士 [12]  。2010年获得第12届世界杰出华人奖 [13]  。2016年连任中国残疾人福利基金会副理事长。
-			</text>
+			<text>			</text>
 		</view>
 	</view>
 </template>
 
 <script>
+	import database from "@/common/database.js"
+	import getStarsign from "@/common/starsign.js"
 	export default {
 		data() {
 			return {
-				starName:""
+				ranking:0,
+				star:"",
+				sexRanking:0,
+				ageRanking:0,
+				sexageRanking:0,
+				jobRanking:0,
+				sexjobRanking:0,
+				starsignRanking:0,
+				sexstarsignRanking:0
 			}
 		},
 		methods: {
@@ -120,9 +125,108 @@
 			}
 		},
 		onLoad(e){
-			if(e.starName){
-				this.starName = e.starName;
+			const today = new Date();
+			let today_day=today.getDate();
+			let today_month=today.getMonth()+1;
+			let year=today.getFullYear();
+			
+			console.log(e.ranking)
+			if(e.ranking){
+				this.ranking = parseInt(e.ranking);
 			}
+			var temp=database[this.ranking].split("|");
+			var tempAge="*";
+			if(temp[4]&&temp[4]!==""){
+				tempAge=year-temp[4];
+			}
+			if(temp[4]===""){
+				temp[4]="****";
+			}
+			if(temp[3]==="M"){
+				temp[3]="男"
+			}
+			if(temp[3]==="F"){
+				temp[3]="女"
+			}
+			var starsign=getStarsign(temp[5],temp[6]);
+			console.log(starsign);
+			this.star={ranking:this.ranking+1,age:tempAge,index:temp[0],visit:temp[1],name:temp[2],sex:temp[3],year:temp[4],month:temp[5],day:temp[6],job:temp[7],country:temp[8],province:temp[9],city:temp[10],imgUrl:temp[11],starsign:starsign};
+			
+			for (let i = 0; i < this.star.ranking; i++) {
+				var temp=database[i].split("|");
+				if(temp[3]==="M"){
+					temp[3]="男"
+				}
+				if(temp[3]==="F"){
+					temp[3]="女"
+				}
+				if(temp[3]===this.star.sex){
+					this.sexRanking=this.sexRanking+1;
+				}
+			}
+			
+			for (let i = 0; i < this.star.ranking; i++) {
+				var temp=database[i].split("|");
+				if(temp[4]===this.star.year){
+					this.ageRanking=this.ageRanking+1;
+				}
+			}
+			
+			for (let i = 0; i < this.star.ranking; i++) {
+				var temp=database[i].split("|");
+				if(temp[3]==="M"){
+					temp[3]="男"
+				}
+				if(temp[3]==="F"){
+					temp[3]="女"
+				}
+				if(temp[3]===this.star.sex&&temp[4]===this.star.year){
+					this.sexageRanking=this.sexageRanking+1;
+				}
+			}
+			
+			for (let i = 0; i < this.star.ranking; i++) {
+				var temp=database[i].split("|");
+				if(temp[7]===this.star.job){
+					this.jobRanking=this.jobRanking+1;
+				}
+			}
+			
+			for (let i = 0; i < this.star.ranking; i++) {
+				var temp=database[i].split("|");
+				if(temp[3]==="M"){
+					temp[3]="男"
+				}
+				if(temp[3]==="F"){
+					temp[3]="女"
+				}
+				if(temp[3]===this.star.sex&&temp[7]===this.star.job){
+					this.sexjobRanking=this.sexjobRanking+1;
+				}
+			}
+			
+			for (let i = 0; i < this.star.ranking; i++) {
+				var temp=database[i].split("|");
+				var starsign=getStarsign(temp[5],temp[6]);
+				if(starsign===this.star.starsign){
+					this.starsignRanking=this.starsignRanking+1;
+				}
+			}
+			
+			for (let i = 0; i < this.star.ranking; i++) {
+				var temp=database[i].split("|");
+				if(temp[3]==="M"){
+					temp[3]="男"
+				}
+				if(temp[3]==="F"){
+					temp[3]="女"
+				}
+				var starsign=getStarsign(temp[5],temp[6]);
+				if(temp[3]===this.star.sex&&starsign===this.star.starsign){
+					this.sexstarsignRanking=this.sexstarsignRanking+1;
+				}
+			}
+			
 		}
 	}
 </script>
@@ -148,7 +252,7 @@
 	}
 	
 	.people-image{
-		width: 50%;
+		width: 90%;
 		height:auto;
 	}
 	
