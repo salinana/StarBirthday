@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
-		<uni-nav-bar class="search-bar" @clickLeft="toHomePage" left-icon="home" rightIcon="more" :fixed="true" background-color="#EFEFEF">
-			<image class="logo" src="/static/logo.png"></image>
+		<uni-nav-bar class="search-bar" @clickLeft="back" left-icon="left" left-text="返回" rightIcon="more" :fixed="true" background-color="#EFEFEF">
+			<image class="logo" src="/static/logo.png" @click="toHomePage()"></image>
 			<uni-easyinput class="my-search-input" :styles="searchStyle"  suffixIcon="search" trim="both" v-model="searchValue" placeholder="搜索" @iconClick="clickSearch"></uni-easyinput>
 		</uni-nav-bar>
 		
@@ -34,7 +34,7 @@
 					<uni-icons type="notification" size="30"></uni-icons>
 					<text>{{this.star.age}}岁</text>
 				</view>
-				<view class="people-feature-item">
+				<view v-if="this.star.starsign!==''" class="people-feature-item">
 					<uni-icons type="star" size="30"></uni-icons>
 					<text>{{this.star.starsign}}</text>
 				</view>
@@ -74,11 +74,11 @@
 				<view class="people-ranking-title">{{this.star.sex}}{{this.star.job}}</view>
 				<view class="people-ranking-number">#{{this.sexjobRanking}}</view>
 			</view>
-			<view calss="people-ranking-box">
+			<view v-if="this.star.starsign!==''" calss="people-ranking-box">
 				<view class="people-ranking-title">{{this.star.starsign}}</view>
 				<view class="people-ranking-number">#{{this.starsignRanking}}</view>
 			</view>
-			<view calss="people-ranking-box">
+			<view v-if="this.star.starsign!==''" calss="people-ranking-box">
 				<view class="people-ranking-title">{{this.star.sex}}{{this.star.starsign}}</view>
 				<view class="people-ranking-number">#{{this.sexstarsignRanking}}</view>
 			</view>
@@ -96,6 +96,7 @@
 	export default {
 		data() {
 			return {
+				searchValue:"",
 				ranking:0,
 				star:"",
 				sexRanking:0,
@@ -108,9 +109,15 @@
 			}
 		},
 		methods: {
+			back() {
+				uni.navigateBack({
+					delta: 1
+				})
+			},
 			clickSearch(){
+				console.log(this.searchValue)
 				uni.navigateTo({
-					url: '/pages/search/search'
+					url: '/pages/search/search?searchValue='+this.searchValue
 				})
 			},
 			toDetailPage(){
@@ -141,6 +148,12 @@
 			}
 			if(temp[4]===""){
 				temp[4]="****";
+			}
+			if(temp[5]===""){
+				temp[5]="**";
+			}
+			if(temp[6]===""){
+				temp[6]="**";
 			}
 			if(temp[3]==="M"){
 				temp[3]="男"
@@ -206,6 +219,9 @@
 			}
 			
 			for (let i = 0; i < this.star.ranking; i++) {
+				if(this.star.starsign===""){
+					break;
+				}
 				var temp=database[i].split("|");
 				var starsign=getStarsign(temp[5],temp[6]);
 				if(starsign===this.star.starsign){
@@ -214,6 +230,9 @@
 			}
 			
 			for (let i = 0; i < this.star.ranking; i++) {
+				if(this.star.starsign===""){
+					break;
+				}
 				var temp=database[i].split("|");
 				if(temp[3]==="M"){
 					temp[3]="男"

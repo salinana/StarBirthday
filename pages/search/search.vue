@@ -1,8 +1,8 @@
 <template>
 	<view class="content">
 		<uni-nav-bar class="search-bar" @clickLeft="toHomePage" left-icon="home" rightIcon="more" :fixed="true" background-color="#EFEFEF">
-			<image class="logo" src="/static/logo.png"></image>
-			<uni-easyinput class="my-search-input" :styles="searchStyle"  suffixIcon="search" trim="both" v-model="searchValue" placeholder="搜索" @iconClick="clickSeach"></uni-easyinput>
+			<image class="logo" src="/static/logo.png" @click="toHomePage()"></image>
+			<uni-easyinput class="my-search-input" :styles="searchStyle"  suffixIcon="search" trim="both" v-model="searchValue" placeholder="搜索" @iconClick="clickSearch"></uni-easyinput>
 		</uni-nav-bar>
 		
 		<view class="common-content-title">搜索结果</view>
@@ -10,208 +10,44 @@
 		
 		<view class="images-area">
 
-			<uni-badge class="uni-badge-left-margin" :text="1" absolute="leftTop" :offset="[10, 10]" :customStyle="{background: '#DF1996'}">
+			<uni-badge v-for="(item, index) in this.starlist" class="uni-badge-left-margin" :text="index+1" absolute="leftTop" :offset="[10, 10]" :customStyle="{background: '#DF1996'}">
 				<view class="image-item-box">
 					<view class="custom-cover">
-					<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
+					<image class="people-image" :src="item.imgUrl" mode="widthFix" @click="toDetailPage(item)">
 					</image>
 					<view class="cover-content">
-						<text class="uni-subtitle uni-white">刘德华 60岁</text>
+						<text class="uni-subtitle uni-white">{{item.name}} {{item.nage}}</text>
 					</view>
 					</view>
 				</view>
 			</uni-badge>
 			
-			<uni-badge class="uni-badge-left-margin" :text="1" absolute="leftTop" :offset="[10, 10]" :customStyle="{background: '#DF1996'}">
-				<view class="image-item-box">
-					<view class="custom-cover">
-					<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
-					</image>
-					<view class="cover-content">
-						<text class="uni-subtitle uni-white">刘德华 60岁</text>
-					</view>
-					</view>
-				</view>
-			</uni-badge>
-			
-			<uni-badge class="uni-badge-left-margin" :text="1" absolute="leftTop" :offset="[10, 10]" :customStyle="{background: '#DF1996'}">
-				<view class="image-item-box">
-					<view class="custom-cover">
-					<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
-					</image>
-					<view class="cover-content">
-						<text class="uni-subtitle uni-white">刘德华 60岁</text>
-					</view>
-					</view>
-				</view>
-			</uni-badge>
-			
-			<uni-badge class="uni-badge-left-margin" :text="1" absolute="leftTop" :offset="[10, 10]" :customStyle="{background: '#DF1996'}">
-				<view class="image-item-box">
-					<view class="custom-cover">
-					<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
-					</image>
-					<view class="cover-content">
-						<text class="uni-subtitle uni-white">刘德华 60岁</text>
-					</view>
-					</view>
-				</view>
-			</uni-badge>
-			
-			<uni-badge class="uni-badge-left-margin" :text="1" absolute="leftTop" :offset="[10, 10]" :customStyle="{background: '#DF1996'}">
-				<view class="image-item-box">
-					<view class="custom-cover">
-					<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
-					</image>
-					<view class="cover-content">
-						<text class="uni-subtitle uni-white">刘德华 60岁</text>
-					</view>
-					</view>
-				</view>
-			</uni-badge>
-			
-			<uni-badge class="uni-badge-left-margin" :text="1" absolute="leftTop" :offset="[10, 10]" :customStyle="{background: '#DF1996'}">
-				<view class="image-item-box">
-					<view class="custom-cover">
-					<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
-					</image>
-					<view class="cover-content">
-						<text class="uni-subtitle uni-white">刘德华 60岁</text>
-					</view>
-					</view>
-				</view>
-			</uni-badge>
-			
-			<uni-badge class="uni-badge-left-margin" :text="1" absolute="leftTop" :offset="[10, 10]" :customStyle="{background: '#DF1996'}">
-				<view class="image-item-box">
-					<view class="custom-cover">
-					<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
-					</image>
-					<view class="cover-content">
-						<text class="uni-subtitle uni-white">刘德华 60岁</text>
-					</view>
-					</view>
-				</view>
-			</uni-badge>
-			
-			<uni-badge class="uni-badge-left-margin" :text="2" absolute="leftTop" :offset="[10, 10]" >
-				<view class="image-item-box">
-					<view class="custom-cover">
-					<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
-					</image>
-					<view class="cover-content">
-						<text class="uni-subtitle uni-white">刘德华 60岁</text>
-					</view>
-					</view>
-				</view>
-			</uni-badge>
-			
-			<uni-badge class="uni-badge-left-margin" :text="3" absolute="leftTop" :offset="[10, 10]" >
-				<view class="image-item-box">
-					<view class="custom-cover">
-					<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
-					</image>
-					<view class="cover-content">
-						<text class="uni-subtitle uni-white">刘德华 60岁</text>
-					</view>
-					</view>
-				</view>
-			</uni-badge>
-			
-			
-			<uni-badge class="uni-badge-left-margin" :text="4" absolute="leftTop" :offset="[10, 10]" >
-				<view class="image-item-box">
-					<view class="custom-cover">
-					<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
-					</image>
-					<view class="cover-content">
-						<text class="uni-subtitle uni-white">刘德华 60岁</text>
-					</view>
-					</view>
-				</view>
-			</uni-badge>
-			
-			
-			<uni-badge class="uni-badge-left-margin" :text="5" absolute="leftTop" :offset="[10, 10]" >
-				<view class="image-item-box">
-					<view class="custom-cover">
-					<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
-					</image>
-					<view class="cover-content">
-						<text class="uni-subtitle uni-white">刘德华 60岁</text>
-					</view>
-					</view>
-				</view>
-			</uni-badge>
-			
-			<uni-badge class="uni-badge-left-margin" :text="6" absolute="leftTop" :offset="[10, 10]" >
-				<view class="image-item-box">
-					<view class="custom-cover">
-					<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
-					</image>
-					<view class="cover-content">
-						<text class="uni-subtitle uni-white">刘德华 60岁</text>
-					</view>
-					</view>
-				</view>
-			</uni-badge>
-			
-			<uni-badge class="uni-badge-left-margin" :text="7" absolute="leftTop" :offset="[10, 10]" >
-				<view class="image-item-box">
-					<view class="custom-cover">
-					<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
-					</image>
-					<view class="cover-content">
-						<text class="uni-subtitle uni-white">刘德华 60岁</text>
-					</view>
-					</view>
-				</view>
-			</uni-badge>
-			
-			<uni-badge class="uni-badge-left-margin" :text="8" absolute="leftTop" :offset="[10, 10]" >
-				<view class="image-item-box">
-					<view class="custom-cover">
-					<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
-					</image>
-					<view class="cover-content">
-						<text class="uni-subtitle uni-white">刘德华 60岁</text>
-					</view>
-					</view>
-				</view>
-			</uni-badge>
-			
-			
-			<uni-badge class="uni-badge-left-margin" :text="9" absolute="leftTop" :offset="[10, 10]" >
-				<view class="image-item-box">
-					<view class="custom-cover">
-					<image class="people-image" src="/static//demo.jpeg" mode="widthFix" @click="toDetailPage">
-					</image>
-					<view class="cover-content">
-						<text class="uni-subtitle uni-white">刘德华 60岁</text>
-					</view>
-					</view>
-				</view>
-			</uni-badge>
 		</view>
 	</view>
 </template>
 
 <script>
+	import database from "@/common/database.js"
+	import getStarsign from "@/common/starsign.js"
+	
 	export default {
 		data() {
 			return {
-				
+				searchValue:"",
+				starlist:[]
 			}
 		},
 		methods: {
 			clickSearch(){
+				console.log(this.searchValue)
 				uni.navigateTo({
-					url: '/pages/search/search'
+					url: '/pages/search/search?searchValue='+this.searchValue
 				})
 			},
-			toDetailPage(){
+			toDetailPage(e){
+				console.log(e.ranking)
 				uni.navigateTo({
-					url: '/pages/detail/detail?starName=刘德华'
+					url: '/pages/detail/detail?ranking='+e.ranking
 				})
 			},
 			toHomePage(){
@@ -219,6 +55,32 @@
 					url: '/pages/index/index'
 				})
 			}
+		},
+		onLoad(e){
+			console.log(e.searchValue);
+			const today = new Date();
+			let today_day=today.getDate();
+			let today_month=today.getMonth()+1;
+			let year=today.getFullYear();
+			console.log(today_month+"/"+today_day);
+			this.searchValue=e.searchValue;
+			for (let i = 0; i < database.length; i++) {
+				var temp=database[i].split("|");
+				temp=temp[2].concat(temp[3]).concat(temp[7]).concat(temp[8]).concat(temp[9]).concat(temp[10]);
+				if(temp.includes(this.searchValue)){
+					temp=database[i].split("|");
+					var tempAge="*";
+					if(temp[4]&&temp[4]!==""){
+						tempAge=year-temp[4];
+					}
+					var item={ranking:i,age:tempAge,index:temp[0],visit:temp[1],name:temp[2],sex:temp[3],year:temp[4],month:temp[5],day:temp[6],job:temp[7],country:temp[8],province:temp[9],city:temp[10],imgUrl:temp[11]};
+					this.starlist.push(item);
+				}
+				if(this.starlist.length>=100){
+					break;
+				}
+			}
+			console.log(this.starlist.length)
 		}
 	}
 </script>

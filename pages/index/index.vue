@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 		<uni-nav-bar class="search-bar" @clickLeft="toHomePage" left-icon="home" rightIcon="more" :fixed="true" background-color="#EFEFEF">
-			<image class="logo" src="/static/logo.png"></image>
+			<image class="logo" src="/static/logo.png" @click="toHomePage()"></image>
 			<uni-easyinput class="my-search-input" :styles="searchStyle"  suffixIcon="search" trim="both" v-model="searchValue" placeholder="搜索" @iconClick="clickSearch"></uni-easyinput>
 		</uni-nav-bar>
 
@@ -284,6 +284,7 @@
 	export default {
 		data() {
 			return {
+				searchValue:"",
 				starlist:[],
 				todaylist:[],
 				tmrlist:[]
@@ -327,8 +328,9 @@
 		},
 		methods: {
 			clickSearch(){
+				console.log(this.searchValue)
 				uni.navigateTo({
-					url: '/pages/search/search'
+					url: '/pages/search/search?searchValue='+this.searchValue
 				})
 			},
 			toDetailPage:function(e){
@@ -354,11 +356,7 @@
 		height: 100%;
 	}
 	
-/* 	.search-bar{
-		display: flex;
-		width: 100%;
-		background-color: white;
-	} */
+
 
 	.logo {
 		height: 35px;
