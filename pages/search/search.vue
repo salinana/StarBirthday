@@ -1,4 +1,11 @@
 <template>
+	
+	<!-- #ifdef APP-PLUS -->
+	<view class="status_bar">  
+	    <view class="top_view"></view>  
+	</view>  
+	<!-- #endif -->
+	
 	<view class="content">
 		<uni-nav-bar class="search-bar" @clickLeft="toHomePage" left-icon="home" rightIcon="more" :fixed="true" background-color="#EFEFEF">
 			<image class="logo" src="/static/logo.png" @click="toHomePage()"></image>
@@ -66,7 +73,14 @@
 			this.searchValue=e.searchValue;
 			for (let i = 0; i < database.length; i++) {
 				var temp=database[i].split("|");
-				temp=temp[2].concat(temp[3]).concat(temp[7]).concat(temp[8]).concat(temp[9]).concat(temp[10]);
+				var starsign=getStarsign(temp[5],temp[6]);
+				if(temp[3]==="M"){
+					temp[3]="男"
+				}
+				if(temp[3]==="F"){
+					temp[3]="女"
+				}
+				temp=temp[2].concat(temp[3]).concat(temp[7]).concat(temp[8]).concat(temp[9]).concat(temp[10]).concat(temp[4]).concat(temp[5]).concat(temp[6]).concat(starsign);
 				if(temp.includes(this.searchValue)){
 					temp=database[i].split("|");
 					var tempAge="*";
@@ -86,6 +100,22 @@
 </script>
 
 <style>
+	
+	.status_bar {
+	    height: var(--status-bar-height);  
+	    width: 100%;  
+	    background-color: #F8F8F8;  
+	}
+	
+	.top_view {  
+	    height: var(--status-bar-height);  
+	    width: 100%;  
+	    position: fixed;  
+	    background-color: #F8F8F8;  
+	    top: 0;  
+	    z-index: 999;  
+	}
+	
 	.content {
 		display: flex;
 		flex-direction: column;

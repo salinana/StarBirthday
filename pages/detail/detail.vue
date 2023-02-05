@@ -1,4 +1,11 @@
 <template>
+	
+	<!-- #ifdef APP-PLUS -->
+	<view class="status_bar">  
+	    <view class="top_view"></view>  
+	</view>  
+	<!-- #endif -->
+	
 	<view class="content">
 		<uni-nav-bar class="search-bar" @clickLeft="back" left-icon="left" left-text="返回" rightIcon="more" :fixed="true" background-color="#EFEFEF">
 			<image class="logo" src="/static/logo.png" @click="toHomePage()"></image>
@@ -17,32 +24,32 @@
 			</view>
 			
 			<view class="people-features-view">
-				<view class="people-feature-item">
+				<view class="people-feature-item" @click="clickSearchBy('')">
 					<uni-icons type="medal" size="30"></uni-icons>
 					<text>第{{this.star.ranking}}名</text>
 				</view>
 				
-				<view class="people-feature-item">
+				<view class="people-feature-item" @click="clickSearchBy(''+this.star.year+this.star.month+this.star.day)">
 					<uni-icons type="calendar" size="30"></uni-icons>
 					<text>{{this.star.year}}年{{this.star.month}}月{{this.star.day}}日</text>
 				</view>
-				<view class="people-feature-item">
+				<view class="people-feature-item" @click="clickSearchBy(''+this.star.province+this.star.city)">
 					<uni-icons type="location" size="30"></uni-icons>
 					<text>{{this.star.country}} {{this.star.province}}{{this.star.city}}</text>
 				</view>
-				<view class="people-feature-item">
+				<view class="people-feature-item" @click="clickSearchBy(''+this.star.year)">
 					<uni-icons type="notification" size="30"></uni-icons>
 					<text>{{this.star.age}}岁</text>
 				</view>
-				<view v-if="this.star.starsign!==''" class="people-feature-item">
+				<view v-if="this.star.starsign!==''" class="people-feature-item" @click="clickSearchBy(''+this.star.starsign)">
 					<uni-icons type="star" size="30"></uni-icons>
 					<text>{{this.star.starsign}}</text>
 				</view>
-				<view class="people-feature-item">
+				<view class="people-feature-item" @click="clickSearchBy(''+this.star.sex)">
 					<uni-icons type="staff" size="30"></uni-icons>
 					<text>{{this.star.sex}}</text>
 				</view>
-				<view class="people-feature-item">
+				<view class="people-feature-item" @click="clickSearchBy(''+this.star.job)">
 					<uni-icons type="shop" size="30"></uni-icons>
 					<text>{{this.star.job}}</text>
 				</view>
@@ -120,9 +127,16 @@
 					url: '/pages/search/search?searchValue='+this.searchValue
 				})
 			},
-			toDetailPage(){
+			clickSearchBy(e){
+				console.log("-->"+e)
 				uni.navigateTo({
-					url: '/pages/detail/detail?starName=刘德华'
+					url: '/pages/search/search?searchValue='+e
+				})
+			},
+			toDetailPage(e){
+				console.log(e.ranking)
+				uni.navigateTo({
+					url: '/pages/detail/detail?ranking='+e.ranking
 				})
 			},
 			toHomePage(){
@@ -251,6 +265,22 @@
 </script>
 
 <style>
+	
+	
+	.status_bar {
+	    height: var(--status-bar-height);  
+	    width: 100%;  
+	    background-color: #F8F8F8;  
+	}
+	
+	.top_view {  
+	    height: var(--status-bar-height);  
+	    width: 100%;  
+	    position: fixed;  
+	    background-color: #F8F8F8;  
+	    top: 0;  
+	    z-index: 999;  
+	}
 	
 	.content {
 		display: flex;

@@ -1,4 +1,11 @@
 <template>
+	
+	<!-- #ifdef APP-PLUS -->  
+	<view class="status_bar">  
+	    <view class="top_view"></view>  
+	</view>  
+	<!-- #endif -->
+	
 	<view class="content">
 		<uni-nav-bar class="search-bar" @clickLeft="toHomePage" left-icon="home" rightIcon="more" :fixed="true" background-color="#EFEFEF">
 			<image class="logo" src="/static/logo.png" @click="toHomePage()"></image>
@@ -349,6 +356,22 @@
 </script>
 
 <style>
+	
+	.status_bar {  
+	    height: var(--status-bar-height);  
+	    width: 100%;  
+	    background-color: #F8F8F8;  
+	}
+	
+	.top_view {  
+	    height: var(--status-bar-height);  
+	    width: 100%;  
+	    position: fixed;  
+	    background-color: #F8F8F8;  
+	    top: 0;  
+	    z-index: 999;  
+	}
+	
 	.content {
 		display: flex;
 		flex-direction: column;
