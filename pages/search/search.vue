@@ -1,13 +1,13 @@
 <template>
 	
-	<!-- #ifdef APP-PLUS -->
+
 	<view class="status_bar">  
 	    <view class="top_view"></view>  
 	</view>  
-	<!-- #endif -->
+
 	
 	<view class="content">
-		<uni-nav-bar class="search-bar" @clickLeft="toHomePage" left-icon="home" rightIcon="more" :fixed="true" background-color="#EFEFEF">
+		<uni-nav-bar class="search-bar" @clickLeft="toHomePage" left-icon="home"  :fixed="true" background-color="#EFEFEF">
 			<image class="logo" src="/static/logo.png" @click="toHomePage()"></image>
 			<uni-easyinput class="my-search-input" :styles="searchStyle"  suffixIcon="search" trim="both" v-model="searchValue" placeholder="搜索" @iconClick="clickSearch"></uni-easyinput>
 		</uni-nav-bar>
@@ -47,18 +47,18 @@
 		methods: {
 			clickSearch(){
 				console.log(this.searchValue)
-				uni.navigateTo({
+				uni.redirectTo({
 					url: '/pages/search/search?searchValue='+this.searchValue
 				})
 			},
 			toDetailPage(e){
 				console.log(e.ranking)
-				uni.navigateTo({
+				uni.redirectTo({
 					url: '/pages/detail/detail?ranking='+e.ranking
 				})
 			},
 			toHomePage(){
-				uni.navigateTo({
+				uni.redirectTo({
 					url: '/pages/index/index'
 				})
 			}
@@ -117,6 +117,7 @@
 	}
 	
 	.content {
+		margin-top:50px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
