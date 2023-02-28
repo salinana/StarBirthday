@@ -1,16 +1,18 @@
 <template>
 	
 	<view class="status_bar">  
-	    <view class="top_view"></view>  
+	    <view class="top_view">
+			<uni-nav-bar class="search-bar" @clickLeft="toHomePage" left-icon="home"  :fixed="true" background-color="#EFEFEF">
+				<image class="logo" src="/static/logo.png" @click="toHomePage()"></image>				
+			</uni-nav-bar>
+		</view>  
 	</view>  
 	
 	<view class="content">
-		<uni-nav-bar class="search-bar" @clickLeft="toHomePage" left-icon="home"  :fixed="true" background-color="#EFEFEF">
-			<image class="logo" src="/static/logo.png" @click="toHomePage()"></image>
-			<uni-easyinput class="my-search-input" :styles="searchStyle"  suffixIcon="search" trim="both" v-model="searchValue" placeholder="搜索" @iconClick="clickSearch"></uni-easyinput>
-		</uni-nav-bar>
 
-		
+		<view class="search">
+		<uni-easyinput class="my-search-input" :styles="searchStyle"  suffixIcon="search" trim="both" v-model="searchValue" placeholder="搜索" @iconClick="clickSearch"></uni-easyinput>
+		</view>
 		<view class="images-area">
 			
 			<view class="common-image-view">

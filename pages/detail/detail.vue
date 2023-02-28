@@ -2,16 +2,16 @@
 	
 
 	<view class="status_bar">  
-	    <view class="top_view"></view>  
+	    <view class="top_view">
+			<uni-nav-bar class="search-bar" @clickLeft="toHomePage" left-icon="left" left-text="返回"  :fixed="true" background-color="#EFEFEF">
+				<image class="logo" src="/static/logo.png" @click="toHomePage()"></image>
+			</uni-nav-bar>
+		</view>  
 	</view>  
 
 	
 	<view class="content">
-		<uni-nav-bar class="search-bar" @clickLeft="toHomePage" left-icon="left" left-text="返回"  :fixed="true" background-color="#EFEFEF">
-			<image class="logo" src="/static/logo.png" @click="toHomePage()"></image>
-			<uni-easyinput class="my-search-input" :styles="searchStyle"  suffixIcon="search" trim="both" v-model="searchValue" placeholder="搜索" @iconClick="clickSearch"></uni-easyinput>
-		</uni-nav-bar>
-		
+
 		<view class="people-summary-view">
 			<view class="people-image-view">
 				<image class="people-image" :src="this.star.imgUrl" mode="widthFix">
